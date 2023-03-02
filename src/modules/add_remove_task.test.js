@@ -62,19 +62,6 @@ describe('Add & Remove Task', () => {
     mockRenderList(storage);
     expect(todoListContainer.children.length).toEqual(storage.length);
   });
-  it('localStorage should be empty when item is removed', () => {
-    addTask('Buy Groceries');
-    removeTask(1);
-    const storage = JSON.parse(localStorage.getItem(storageKey));
-    expect(storage.length).toBe(0);
-  });
-  it('children for todoListContainer should be 0', () => {
-    addTask('Buy Groceries');
-    removeTask(1);
-    const storage = JSON.parse(localStorage.getItem(storageKey));
-    mockRenderList(storage);
-    expect(todoListContainer.children.length).toBe(0);
-  });
 
   it('localStorage should be empty when item is removed', () => {
     addTask('Buy Groceries');
