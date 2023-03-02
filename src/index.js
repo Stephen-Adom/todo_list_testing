@@ -161,3 +161,5 @@ window.addEventListener('DOMContentLoaded', () => {
   submitBtn.src = arrowDown;
   logoContainer.src = TodoLogo;
 });
+
+export default renderTodoList;
