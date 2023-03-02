@@ -16,7 +16,9 @@ const resetTaskIndexes = (TodoList) => {
 };
 
 const addTask = (description) => {
-  const TodoList = localStorage.getItem('myTasks') ? JSON.parse(localStorage.getItem('myTasks')) : [];
+  const TodoList = localStorage.getItem('myTasks')
+    ? JSON.parse(localStorage.getItem('myTasks'))
+    : [];
   const newTodo = new Todo(TodoList.length + 1, description);
   TodoList.push(newTodo);
   saveToStorage(TodoList);
@@ -32,9 +34,13 @@ const editTaskDescription = (description, index) => {
   const TodoList = JSON.parse(localStorage.getItem('myTasks'));
   const selectedTodo = TodoList.find((todo) => todo.index === index);
   selectedTodo.description = description;
-  saveToStorage();
+  saveToStorage(TodoList);
 };
 
 export {
-  addTask, removeTask, editTaskDescription, resetTaskIndexes,
+  addTask,
+  removeTask,
+  editTaskDescription,
+  resetTaskIndexes,
+  saveToStorage,
 };

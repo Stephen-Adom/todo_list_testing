@@ -120,25 +120,24 @@ To run the project, execute the following command:
 
 To run tests, run the following command:
 
-<!--
 Example command:
 
 ```sh
-  bin/rails test test/models/article_test.rb
+  npm run test
 ```
---->
+
+-
 
 ### Deployment
 
 You can deploy this project using:
 
-<!--
 Example:
 
 ```sh
-
+    RUN npm run build to create update the production folder (dist)
+    Deploy using vercel or gh-pages
 ```
- -->
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
@@ -187,7 +186,6 @@ If you like this project...
 <!-- ACKNOWLEDGEMENTS -->
 
 ## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
 
 I would like to thank (Valentino Gagliardi)['https://www.valentinog.com/blog/webpack/'] for his concise guide to getting started with webpack 5
 

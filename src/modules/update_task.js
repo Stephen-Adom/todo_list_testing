@@ -1,8 +1,4 @@
-import { resetTaskIndexes } from './add_remove_task.js';
-
-const saveToStorage = (TodoList) => {
-  localStorage.setItem('myTasks', JSON.stringify(TodoList));
-};
+import { resetTaskIndexes, saveToStorage } from './add_remove_task.js';
 
 const toggleTaskCompleted = (index) => {
   const TodoList = JSON.parse(localStorage.getItem('myTasks'));
