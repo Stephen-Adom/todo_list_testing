@@ -135,8 +135,7 @@ You can deploy this project using:
 Example:
 
 ```sh
-    RUN npm run build to create update the production folder (dist)
-    Deploy using vercel or gh-pages
+    vercel or gh-pages
 ```
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
