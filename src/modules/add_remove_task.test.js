@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-import { addTask, removeTask } from './add_remove_task.js';
+import { addTask, removeTask, editTaskDescription } from './add_remove_task.js';
 
 const localStorageMock = (() => {
   let store = {};
@@ -76,5 +76,26 @@ describe('Add & Remove Task', () => {
     const storage = JSON.parse(localStorage.getItem(storageKey));
     mockRenderList(storage);
     expect(todoListContainer.children.length).toBe(0);
+  });
+
+  it('should update the description of todo item', () => {
+    addTask('Buy Groceries');
+    editTaskDescription('Check if Groceries are available before buying', 1);
+    const storage = JSON.parse(localStorage.getItem(storageKey));
+    const todoItem = storage.find((item) => item.index === 1);
+    expect(todoItem.description).toEqual(
+      'Check if Groceries are available before buying',
+    );
+  });
+
+  it('update should reflect in the DOM', () => {
+    addTask('Buy Groceries');
+    editTaskDescription('Check if Groceries are available before buying', 1);
+    const storage = JSON.parse(localStorage.getItem(storageKey));
+    mockRenderList(storage);
+
+    expect(todoListContainer.children[0].textContent).toEqual(
+      'Check if Groceries are available before buying',
+    );
   });
 });
