@@ -77,8 +77,8 @@ describe('Add & Remove Task', () => {
     mockRenderList(storage);
     expect(todoListContainer.children.length).toBe(0);
   });
-  
-   it('should update the description of todo item', () => {
+
+  it('should update the description of todo item', () => {
     addTask('Buy Groceries');
     editTaskDescription('Check if Groceries are available before buying', 1);
     const storage = JSON.parse(localStorage.getItem(storageKey));
