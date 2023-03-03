@@ -12,6 +12,7 @@ const toggleTaskCompleted = (index) => {
 const clearAllCompletedTasks = () => {
   const TodoList = JSON.parse(localStorage.getItem('myTasks'));
   const uncompletedTasks = TodoList.filter((task) => task.completed === false);
+  saveToStorage(uncompletedTasks);
   resetTaskIndexes(uncompletedTasks);
 };
 
